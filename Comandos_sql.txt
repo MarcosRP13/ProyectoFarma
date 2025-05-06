@@ -1,2 +1,5 @@
 1- SELECT Farmacia.nom_farm, clientes.nom_clie from Farmacia inner join pedidos on farmacia.cod_farm = pedidos.cod_farm inner join clientes on pedidos.cod_clie = clientes.cod_clie where farmacia.cod_farm in (select cod_farm from producto where cod_prod = 101);
+
 2- select Fech_ped, Est_ped, clientes.nom_clie, nom_farm from pedidos inner join farmacia on pedidos.cod_farm = farmacia.cod_farm inner join clientes on pedidos.cod_clie = clientes.cod_clie;
+
+3- select nom_clie, tip_prod, sum(pre_prod) as Precio, cant_ped from clientes inner join pedidos on clientes.cod_clie = pedidos.cod_clie inner join producto on producto.cod_prod = pedidos.cod_prod group by clientes.cod_clie having sum(pre_prod) >= 10;
