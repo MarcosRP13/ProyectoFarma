@@ -19,16 +19,16 @@ $modelo = new Model();
     </div>
     <ul class="nav-links">
       <li><a href="principal.php">Inicio</a></li>
-      <li><a href="#">Acerca</a></li>
-      <li><a href="#">Farmacias</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Pedidos</a></li>
+      <li><a href="acerca.php">Acerca</a></li>
+      <li><a href="farmacias.php">Farmacias</a></li>
+      <li><a href="productos.php">Productos</a></li>
+      <li><a href="pedidos.php">Pedidos</a></li>
       <li><a href="#">Contacto</a></li>
     </ul>
   </nav>
 
   <table>
-    <caption>Lista de Clientes - Farmacia</caption>
+    <caption>Lista de Clientes - Farmaya</caption>
     <thead>
       <tr>
         <th>Código</th>
