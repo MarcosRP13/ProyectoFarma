@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS `farmacia`;
-CREATE DATABASE `farmacia` ;
+DROP DATABASE IF EXISTS `farmaya`;
+CREATE DATABASE `farmaya`; ;
 
-USE `farmacia`;
+USE `farmaya`;
 -- FARMACIA
 CREATE TABLE Farmacias (
     Cod_Farm INT PRIMARY KEY,
