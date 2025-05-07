@@ -3,3 +3,8 @@
 2- select Fech_ped, Est_ped, clientes.nom_clie, nom_farm from pedidos inner join farmacia on pedidos.cod_farm = farmacia.cod_farm inner join clientes on pedidos.cod_clie = clientes.cod_clie;
 
 3- select nom_clie, tip_prod, sum(pre_prod) as Precio, cant_ped from clientes inner join pedidos on clientes.cod_clie = pedidos.cod_clie inner join producto on producto.cod_prod = pedidos.cod_prod group by clientes.cod_clie having sum(pre_prod) >= 10;
+
+SELECT * FROM Clientes
+SELECT * FROM Farmacias
+SELECT * FROM Productos
+SELECT * FROM Pedidos
