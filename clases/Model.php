@@ -145,7 +145,7 @@ HAVING SUM(pre_prod) >= 10";
     public function insertarCliente($codlie, $nombre, $ape1, $ape2, $tel, $email, $dir) {
         $sql = "INSERT INTO Clientes (Cod_Clie, Nom_Clie, Ape_Clie1, Ape_Clie2, Tel_Clie, Eml_Clie, Dir_Clie) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute([$cod, $nombre, $ape1, $ape2, $tel, $email, $dir]);
+        return $stmt->execute([$codlie, $nombre, $ape1, $ape2, $tel, $email, $dir]);
     }
 
     private function obtenerNuevoCodigoPedido() {
