@@ -5,7 +5,7 @@ USE `farmaya`;
 -- FARMACIA
 CREATE TABLE Farmacias (
     Cod_Farm INT PRIMARY KEY,
-    Nom_Farm VARCHAR(20),
+    Nom_Farm VARCHAR(200),
     Tel_Farm VARCHAR(9),
     Eml_Farm VARCHAR(35),
     Dir_Farm VARCHAR(30),
@@ -19,7 +19,7 @@ CREATE TABLE Productos (
     Tip_Prod VARCHAR(25),
     Pre_Prod DECIMAL(10,2),
     Cod_Farm INT,
-    FOREIGN KEY (Cod_Farm) REFERENCES Farmacia(Cod_Farm)
+    FOREIGN KEY (Cod_Farm) REFERENCES Farmacias(Cod_Farm)
 );
 
 -- CLIENTES
@@ -43,11 +43,11 @@ CREATE TABLE Pedidos (
     Cod_Farm INT,
     Cod_Prod INT,
     FOREIGN KEY (Cod_Clie) REFERENCES Clientes(Cod_Clie),
-    FOREIGN KEY (Cod_Farm) REFERENCES Farmacia(Cod_Farm),
-	FOREIGN KEY (Cod_Prod) REFERENCES Producto(Cod_Prod)
+    FOREIGN KEY (Cod_Farm) REFERENCES Farmacias(Cod_Farm),
+	FOREIGN KEY (Cod_Prod) REFERENCES Productos(Cod_Prod)
 );
 
-INSERT INTO Farmacia (Cod_Farm, Nom_Farm, Tel_Farm, Eml_Farm, Dir_Farm, Ciu_Farm) VALUES
+INSERT INTO Farmacias (Cod_Farm, Nom_Farm, Tel_Farm, Eml_Farm, Dir_Farm, Ciu_Farm) VALUES
 (1, 'Farmacia Central', '987654321', 'central@farmacias.com', 'Av. Salud 123', 'Madrid'),
 (2, 'Farmacia Norte', '912345678', 'norte@farmacias.com', 'Calle Norte 45', 'Barcelona'),
 (3, 'Farmacia Sur', '934567890', 'sur@farmacias.com', 'Av. Sur 789', 'Sevilla'),
@@ -55,7 +55,7 @@ INSERT INTO Farmacia (Cod_Farm, Nom_Farm, Tel_Farm, Eml_Farm, Dir_Farm, Ciu_Farm
 (5, 'Farmacia Oeste', '976543210', 'oeste@farmacias.com', 'Paseo Oeste 56', 'Zaragoza'),
 (6, 'Farmacia Centro Salud', '988877766', 'centrosalud@farmacias.com', 'Calle Salud 98', 'Bilbao');
 
-INSERT INTO Producto (Cod_Prod, Nom_Prod, Tip_Prod, pre_prod, cod_farm) VALUES
+INSERT INTO Productos (Cod_Prod, Nom_Prod, Tip_Prod, pre_prod, cod_farm) VALUES
 (101, 'Paracetamol', 'Analgésico', '10', '1'),
 (102, 'Ibuprofeno', 'Antiinflamatorio', '5', '3'),
 (103, 'Amoxicilina', 'Antibiótico', '11', '1'),
