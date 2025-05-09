@@ -3,13 +3,14 @@ require_once "autoloader.php";
 $modelo = new Model();
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Farmaya - Medicamentos</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>Farmaya</title>
+    <link rel="stylesheet" href="style.css">
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -129,12 +130,12 @@ $modelo = new Model();
     .para a:hover {
       background-color: darkgreen;
     }
-  </style>
+</style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="logo"><h1>Farmaya</h1></div>
+<nav class="navbar">
+    <div class="logo"><h1>Farmaya</h1>
+    </div>
     <ul class="nav-links">
       <li><a href="principal.php">Inicio</a></li>
       <li><a href="acerca.php">Acerca</a></li>
@@ -145,26 +146,18 @@ $modelo = new Model();
       <li><a href="registros.php">Registros</a></li>
     </ul>
   </nav>
-
-  <div class="container">
-    <table>
-      <caption>Lista de Medicamentos - Farmaya</caption>
-      <thead>
-        <tr>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Tipo</th>
-          <th>Precio</th>
-          <th>Código Farmacia</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php $modelo->showAllProducts() ?>
-      </tbody>
-      <div class="para">
-      <a href="paracetamol.php">Paracetamol</a> 
-</div>
-  </div>
-
+  <table>
+    <caption>Lista de Pedidos - Farmaya</caption>
+    <thead>
+      <tr>
+        <th>Fecha del Pedido</th>
+        <th>Estado del Pedido</th>
+        <th>Nombre del Comprador</th>
+        <th>Nombre de la Farmacia </th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php $modelo->showAllPediinfo()?>
+    </tbody>
 </body>
 </html>

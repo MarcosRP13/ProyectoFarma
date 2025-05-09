@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +7,7 @@
   <title>Farmaya</title>
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
-    * {
+        * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -45,24 +46,6 @@
       color: white;
     }
 
-    h3 {
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    img {
-      height: 400px;
-      width: 200px;
-    }
-
-    .lado {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      text-align: center;
-    }
-
     footer {
     background-color: rgb(26, 196, 74);
     padding: 10px;
@@ -84,7 +67,7 @@
     body {
       padding-bottom: 100px;
     }
-  </style>
+</style>
 </head>
 <body>
 
@@ -99,67 +82,7 @@
       <li><a href="registros.php">Registros</a></li>
     </ul>
   </nav>
-  <div>
-    <br><h3>Tu App de Farmacias</h3>
-    <p>Tu medicina lista antes de que llegues</p><br>
-  </div>
-
-  <div>
-    <h3>¿Qué es esta app?</h3>
-    <p>
-      Esta aplicación web te permite solicitar tus medicamentos a la farmacia antes de salir de casa.<br>
-      Así te aseguras de que estén disponibles al momento de recogerlos.<br> 
-      Y si necesitas receta, solo tienes que subir una foto.
-    </p><br>
-  </div>
-
-  <div>
-    <h3>Vista previa de la app</h3>
-
-    <div class="lado">
-    <div>
-      <img src="img/navegacion.jpg">
-      <p><i>Busca fácilmente el medicamento que necesitas</i></p>
-    </div>
-
-    <div>
-      <img src="img/compra.jpg">
-      <p><i>Compra tu recete en pocos pasos</i></p>
-    </div>
-
-    <div>
-      <img src="img/sesion.jpg">
-      <p><i>Inicia Sesion</i></p>
-    </div>
-
-    <div>
-      <img src="img/registro.jpg">
-      <p><i>Registrate</i></p>
-    </div>
-  </div>
-
-  <div>
-    <br><h3>¿Cómo funciona?</h3>
-    <ol>
-      <li>Busca el medicamento desde la app.</li>
-      <li>Consulta si está disponible en tu farmacia.</li>
-      <li>Solicítalo si no lo tienen.</li>
-      <li>Sube tu receta <b>(si se requiere)</b>.</li>
-      <li>Recoge tu pedido sin tiempo de espera.</li><br>
-    </ol>
-  </div>
-
-  <div>
-    <h2>Descarga la app</h2>
-    <p>Muy pronto disponible en App Store y Google Play</p>
-    <a href="#">Descargar</a>
-  </div>
-
-  <div>
-    <p>&copy; 2025 Tu App de Farmacias | <a href="#">Contacto</a> | <a href="#">Preguntas Frecuentes</a></p>
-  </div>
-
-<footer>
+  <footer>
 <p>&copy; 2025 Farmaya. Todos los derechos reservados.</p>
     <p>
       <a href="principal.php">Inicio</a> |
@@ -169,3 +92,22 @@
 </footer>
 </body>
 </html>
+<?php
+require_once 'autoloader.php';
+$modelo = new Model();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $codlie = $_POST["codlie"];
+  $nombre = $_POST["nombre"];
+    $ape1 = $_POST["ape1"];
+    $ape2 = $_POST["ape2"];
+    $tel = $_POST["tel"];
+    $email = $_POST["email"];
+    $dir = $_POST["dir"];
+
+    $modelo->insertarCliente($codlie, $nombre, $ape1, $ape2, $tel, $email, $dir);
+}
+
+echo "Usuario añadido: " . $nombre. " " . $ape1;
+
+?>
